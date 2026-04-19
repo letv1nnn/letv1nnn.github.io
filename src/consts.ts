@@ -14,13 +14,13 @@ export const personalData: PersonalInfo[] = [
                Computer Science student at DCU (Dublin City University). My \
                primary interests are programming (primarily Rust and C++), computer \
                science in general, mathematics, geopolitics, literature (both classical and \
-               technical), history, and philosophy.',
+               technical) and history.',
     },
     {
         id: 2,
         title: 'What am I currently doing?',
-        body: 'I\'m preparing for the upcoming exams, constantly expanding my knowledge in \
-               Rust and preparing for the upcoming internship.',
+        body: 'I\'m preparing for the upcoming exams, reading `Rust for Rustaceans` and \
+               `War and Peace` and preparing for the upcoming internship.',
     },
     {
         id: 3,
@@ -52,7 +52,7 @@ export const resourcesData: ResourceCategory[] = [
       {
         title: "MIT Math (Calculus / Linear Algebra)",
         url: "https://mitsoul.org/courses/mit/course-18/",
-        description: "A comprehensive course on calculus and linear algebra.",
+        description: "A plan for maths self-studying",
       },
       {
         title: "Harvard Stat 110 (Probability)",
@@ -81,6 +81,12 @@ export const resourcesData: ResourceCategory[] = [
       },
     ],
   },
+  {
+    id: 2,
+    title: "Computer Sience",
+    description: "Computer science courses, books, and other resources that I find useful.",
+    items: []
+  }
 ];
 
 export const socialLinks = [

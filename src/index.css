@@ -20,7 +20,7 @@ body {
 .container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 80px 24px;
+  padding: 20px 24px;
 }
 
 /* Headings */
@@ -79,4 +79,15 @@ nav a:hover {
 
 nav a.active {
   color: white;
+}
+
+/* Links */
+a {
+  color: #60a5fa;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #93c5fd;
 }
