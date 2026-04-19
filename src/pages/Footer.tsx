@@ -1,4 +1,5 @@
 import './Footer.css'
+import { socialLinks } from '../consts'
 
 export const Footer = () => {
   return (
@@ -10,9 +11,9 @@ export const Footer = () => {
         </div>
 
         <div className="footer-right">
-          <a href="https://github.com/letv1nnn">GitHub</a>
-          <a href="https://www.linkedin.com/in/artem-lytvyn-22694b348/">LinkedIn</a>
-          <a href="https://leetcode.com/u/letv1n/">LeetCode</a>
+          {socialLinks.map(link => (
+            <a key={link.name} href={link.url}>{link.name}</a>
+          ))}
         </div>
 
       </div>
