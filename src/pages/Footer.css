@@ -1,0 +1,40 @@
+.footer {
+  background: #000;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 24px 40px;
+  font-size: 13px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-left {
+  opacity: 0.7;
+  letter-spacing: 0.2px;
+}
+
+.footer-right {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-right a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer-right a:hover {
+  opacity: 1;
+  color: rgba(255, 255, 255, 0.9);
+}
