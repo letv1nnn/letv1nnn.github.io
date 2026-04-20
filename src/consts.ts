@@ -92,5 +92,4 @@ export const resourcesData: ResourceCategory[] = [
 export const socialLinks = [
     { name: 'GitHub', url: 'https://github.com/letv1nnn' },
     { name: 'LinkedIn', url: 'https://www.linkedin.com/in/artem-lytvyn-22694b348/' },
-    { name: 'LeetCode', url: 'https://leetcode.com/u/letv1n/' },
 ];
