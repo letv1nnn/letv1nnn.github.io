@@ -2,7 +2,7 @@ import { Routes, Route, Link, Navigate, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Home } from './pages/Home'
 import { Articles } from './pages/Articles';
-import { Footer } from './pages/Footer';
+import { Footer } from './components/Footer';
 import { Resources } from './pages/Resources';
 
 export const Layout = () => {
