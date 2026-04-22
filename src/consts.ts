@@ -50,14 +50,9 @@ export const resourcesData: ResourceCategory[] = [
     description: "Maths courses, books, and other resources that I find useful.",
     items: [
       {
-        title: "MIT Math (Calculus / Linear Algebra)",
+        title: "MIT Mathematics",
         url: "https://mitsoul.org/courses/mit/course-18/",
-        description: "A plan for maths self-studying",
-      },
-      {
-        title: "Harvard Stat 110 (Probability)",
-        url: "https://stat110.hsites.harvard.edu",
-        description: "An introduction to probability theory.",
+        description: "Plan for obtain a degree in mathematics.",
       },
       {
         title: "Stanford Probability Playlist",
@@ -70,11 +65,6 @@ export const resourcesData: ResourceCategory[] = [
         description: "A channel with tutorials on various mathematical topics.",
       },
       {
-        title: "MIT Discrete Math (MCS Book)",
-        url: "https://courses.csail.mit.edu/6.042/spring18/mcs.pdf",
-        description: "A book on discrete mathematics.",
-      },
-      {
         title: "Dr Trefor Playlist",
         url: "https://www.youtube.com/@DrTrefor/playlists",
         description: "A playlist of videos on various mathematical topics.",
@@ -85,8 +75,51 @@ export const resourcesData: ResourceCategory[] = [
     id: 2,
     title: "Computer Sience",
     description: "Computer science courses, books, and other resources that I find useful.",
-    items: []
-  }
+    items: [
+      {
+        title: "Computer Systems",
+        url: "https://www.youtube.com/watch?v=Keducx5bp-g&list=PL0j-r-omG7i0-mnsxN5T4UcVS1Di0isqf&index=17",
+        description: "A playlist of videos from zero from Barkeley on computer systems.",
+      },
+      {
+        title: "Nand to Tetris",
+        url: "https://www.nand2tetris.org",
+        description: "Starting with basic logic gates and ending with a working computer."
+      },
+      {
+        title: "Operating Systems Class",
+        url: "https://pdos.csail.mit.edu/6.S081/2021/schedule.html",
+        description: "MIT course on operating systems, working with XV6 OS."
+      },
+      {
+        title: "Three Easy Pieces",
+        url: "https://pages.cs.wisc.edu/~remzi/OSTEP/",
+        description: "A book on operating systems, covering various topics in depth."
+      },
+      {
+        title: "Computer Networking: A Top-Down Approach",
+        url: "https://gaia.cs.umass.edu/kurose_ross/wireshark.php",
+        description: "A book on computer networking, covering various topics in depth."
+      },
+    ]
+  },
+  {
+    id: 3,
+    title: "Interesting Articles/Projects",
+    description: "Interesting articles and projects.",
+    items: [
+      {
+        title: "Linux Device Drivers",
+        url: "https://crescentro.se/posts/writing-drivers/",
+        description: "An article on writing a basic Linux device driver."
+      },
+      {
+        title: "Ray Tracing in One Weekend",
+        url: "https://raytracing.github.io/books/RayTracingInOneWeekend.html",
+        description: "A book on ray tracing, covering various topics in depth."
+      },
+    ]
+  } 
 ];
 
 export const socialLinks = [

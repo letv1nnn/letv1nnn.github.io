@@ -19,7 +19,7 @@ export const Layout = () => {
         <Link to='/articles'>Articles</Link>
         <Link to='/resources'>Resources</Link>
       </nav>
-      <main style={{ overflow: 'hidden' }}>
+      <main style={{ overflow: 'auto', paddingBottom: '80px' }}>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path='/' element={<Navigate to='/home' />} />
