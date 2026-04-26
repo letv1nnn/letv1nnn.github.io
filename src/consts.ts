@@ -55,6 +55,11 @@ export const resourcesData: ResourceCategory[] = [
         description: "Plan for obtain a degree in mathematics.",
       },
       {
+        title: "Essence of Calculus",
+        url: "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr",
+        description: "The essence and philosophy of Calculus from `Three Blue One Brown`"
+      },
+      {
         title: "Stanford Probability Playlist",
         url: "https://www.youtube.com/watch?v=2MuDZIAzBMY&list=PLoROMvodv4rOpr_A7B9SriE_iZmkanvUg",
         description: "A playlist of videos on probability theory.",
@@ -117,6 +122,11 @@ export const resourcesData: ResourceCategory[] = [
         title: "Ray Tracing in One Weekend",
         url: "https://raytracing.github.io/books/RayTracingInOneWeekend.html",
         description: "A book on ray tracing, covering various topics in depth."
+      },
+      {
+        title: "Design Patterns",
+        url: "https://refactoring.guru/design-patterns/",
+        description: "Website with primary OOP dp, written differently from the `GOF` book.",
       },
     ]
   } 
