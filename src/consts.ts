@@ -19,8 +19,8 @@ export const personalData: PersonalInfo[] = [
     {
         id: 2,
         title: 'What am I currently doing?',
-        body: 'I\'m preparing for the upcoming exams, reading `Rust for Rustaceans` and \
-               `War and Peace` and preparing for the upcoming internship.',
+        body: 'I recently started working at Red Hat as an intern. In addition, I am continuing \
+               to deepen my Rust expertise and expand my knowledge of modern software development tools and practices.',
     },
     {
         id: 3,
