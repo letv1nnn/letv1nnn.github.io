@@ -3,6 +3,7 @@ interface PersonalInfo {
     id: number,
     title: string,
     body: string,
+    links?: { label: string, url: string }[],
 }
 
 export const personalData: PersonalInfo[] = [
@@ -19,8 +20,11 @@ export const personalData: PersonalInfo[] = [
     {
         id: 2,
         title: 'What am I currently doing?',
-        body: 'I recently started working at Red Hat as an intern. In addition, I am continuing ' +
-              'to deepen my Rust expertise and expand my knowledge of modern software development tools and practices.',
+        body: 'I am currently working on NVIDIA Openshell as a Red Hat intern. ' +
+              'Alongside that, I continue deepening my knowledge of Rust.',
+        links: [
+            { label: 'NVIDIA Openshell', url: 'https://github.com/NVIDIA/OpenShell' },
+        ],
     },
     {
         id: 3,
