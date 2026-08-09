@@ -1,9 +1,15 @@
-import { Routes, Route, Link, Navigate, useLocation } from 'react-router-dom'
+import { Routes, Route, NavLink, Navigate, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Home } from './pages/Home'
 import { Articles } from './pages/Articles';
 import { Footer } from './components/Footer';
-import { Resources } from './pages/Resources';
+
+const pageMotion = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -20 },
+  transition: { duration: 0.5 },
+};
 
 export const Layout = () => {
   const location = useLocation();
@@ -15,51 +21,29 @@ export const Layout = () => {
       transition={{ duration: 0.5 }}
     >
       <nav>
-        <Link to='/home'>Home</Link>
-        <Link to='/articles'>Articles</Link>
-        <Link to='/resources'>Resources</Link>
+        <NavLink to='/home'>Home</NavLink>
+        <NavLink to='/articles'>Articles</NavLink>
       </nav>
-      <main style={{ overflow: 'auto', paddingBottom: '80px' }}>
+      <main className="main">
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path='/' element={<Navigate to='/home' />} />
-       
+
             <Route path='/home' element={
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
-              >
+              <motion.div {...pageMotion}>
                 <Home />
               </motion.div>
             }/>
             <Route path='/articles' element={
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
-              >
+              <motion.div {...pageMotion}>
                 <Articles />
               </motion.div>
             }/>
-            <Route path='/resources' element={
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
-              >
-                <Resources />
-              </motion.div>
-            }/>
+            <Route path='*' element={<Navigate to='/home' />} />
           </Routes>
         </AnimatePresence>
       </main>
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </motion.div>
   );
 }
