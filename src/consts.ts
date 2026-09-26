@@ -10,18 +10,18 @@ export const personalData: PersonalInfo[] = [
     {
         id: 1,
         title: 'Me, my self-reflection and my articles',
-        body: 'My name is Artem (Artem Lytvyn). I am 18 y.o., originally ' +
+        body: 'My name is Artem (Artem Lytvyn). I am 19 y.o., originally ' +
               'from Ukraine (Kiev), and now live in Ireland (Dublin). I am also a second-year ' +
               'Computer Science student at DCU (Dublin City University). My ' +
               'primary interests are programming (primarily Rust and C++), computer ' +
-              'science in general, mathematics, geopolitics, literature (both classical and ' +
-              'technical) and history.',
+              'science in general, mathematics and literature (both classical and ' +
+              'technical).',
     },
     {
         id: 2,
         title: 'What am I currently doing?',
-        body: 'I am currently working on NVIDIA Openshell as a Red Hat intern. ' +
-              'Alongside that, I continue deepening my knowledge of Rust.',
+        body: 'I am currently working on NVIDIA Openshell, recently finished interning at Red Hat. ' +
+              'Alongside that, I continue deepening my knowledge of Rust and just dreaming.',
         links: [
             { label: 'NVIDIA Openshell', url: 'https://github.com/NVIDIA/OpenShell' },
         ],
