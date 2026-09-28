@@ -5,8 +5,16 @@
     <link rel="icon" href="/pwi.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Artem Lytvyn</title>
-    <script type="module" crossorigin src="/assets/index-Bp0b5fmO.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CGpkx6rK.css">
+    <script>
+      // Apply the saved theme before first paint to avoid a flash of the wrong colours.
+      try {
+        if (localStorage.getItem('theme') === 'light') document.documentElement.dataset.theme = 'light';
+      } catch {}
+    </script>
+    <script type="module" crossorigin src="/assets/index-BxPXrKoG.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/Articles-yhbMDf6t.js">
+    <link rel="stylesheet" crossorigin href="/assets/Articles-D2BhUlUh.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-B3aovHCG.css">
   </head>
   <body>
     <div id="root"></div>
