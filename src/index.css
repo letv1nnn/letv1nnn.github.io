@@ -1,3 +1,36 @@
+:root {
+  --bg: #000;
+  --text: #e5e5e5;
+  --text-strong: #fff;
+  --text-muted: #b5b5b5;
+  --text-subtle: #9a9a9a;
+  --text-faint: #7a7a7a;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.2);
+  --surface: rgba(255, 255, 255, 0.03);
+  --surface-strong: rgba(255, 255, 255, 0.08);
+  --nav-bg: rgba(0, 0, 0, 0.6);
+  --link: #60a5fa;
+  --link-hover: #93c5fd;
+}
+
+/* Soft white-beige theme */
+:root[data-theme="light"] {
+  --bg: #f6f1e7;
+  --text: #3b342d;
+  --text-strong: #1f1a15;
+  --text-muted: #4d453d;
+  --text-subtle: #6e645a;
+  --text-faint: #72685e;
+  --border: rgba(70, 50, 30, 0.12);
+  --border-strong: rgba(70, 50, 30, 0.28);
+  --surface: rgba(70, 50, 30, 0.04);
+  --surface-strong: rgba(70, 50, 30, 0.08);
+  --nav-bg: rgba(246, 241, 231, 0.75);
+  --link: #1d5fc4;
+  --link-hover: #16489a;
+}
+
 html, body, #root {
   height: 100%;
   scroll-behavior: smooth;
@@ -11,8 +44,9 @@ html, body, #root {
 
 body {
   margin: 0;
-  background-color: #000;
-  color: #e5e5e5;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
   font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
   line-height: 1.6;
 }
@@ -40,14 +74,14 @@ h1 {
 h2 {
   font-size: 24px;
   font-weight: 400;
-  color: #a1a1a1;
+  color: var(--text-subtle);
   margin-bottom: 24px;
 }
 
 /* Paragraphs */
 p {
   font-size: 17px;
-  color: #b5b5b5;
+  color: var(--text-muted);
 }
 
 nav {
@@ -61,16 +95,16 @@ nav {
   top: 0;
   z-index: 100;
 
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--nav-bg);
   backdrop-filter: blur(12px);
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--border);
 }
 
 nav a {
   font-family: inherit;
   text-transform: uppercase;
-  color: #9a9a9a;
+  color: var(--text-subtle);
   text-decoration: none;
   font-size: 14px;
   letter-spacing: 0.5px;
@@ -79,20 +113,49 @@ nav a {
 }
 
 nav a:hover {
-  color: #ffffff;
+  color: var(--text-strong);
 }
 
 nav a.active {
-  color: white;
+  color: var(--text-strong);
 }
 
 /* Links */
 a {
-  color: #60a5fa;
+  color: var(--link);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 a:hover {
-  color: #93c5fd;
+  color: var(--link-hover);
+}
+/* Theme toggle */
+.theme-toggle {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-subtle);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--text-strong);
+  border-color: var(--border-strong);
+}
+
+@media (max-width: 480px) {
+  .theme-toggle {
+    right: 12px;
+  }
 }

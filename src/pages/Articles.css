@@ -1,0 +1,157 @@
+/* Article list */
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 32px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.post-card {
+  display: block;
+  padding: 20px 24px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.post-card:hover {
+  border-color: var(--border-strong);
+  background: var(--surface);
+}
+
+.post-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+}
+
+.post-card h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-strong);
+}
+
+.post-card time {
+  margin-left: auto;
+  font-size: 17px;
+  color: var(--text-subtle);
+  white-space: nowrap;
+}
+
+.post-meta {
+  font-size: 14px;
+  color: var(--text-faint);
+}
+
+.post-card p {
+  margin: 8px 0 0;
+  font-size: 15px;
+}
+
+/* Single article */
+.post-back {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.post-tag {
+  color: var(--text-subtle);
+}
+
+.post-body {
+  font-size: 17px;
+  color: var(--text-muted);
+}
+
+.post-body h1,
+.post-body h2,
+.post-body h3,
+.post-body h4 {
+  color: var(--text-strong);
+  font-weight: 600;
+  margin: 40px 0 16px;
+}
+
+.post-body h1 { font-size: 32px; }
+.post-body h2 { font-size: 26px; }
+.post-body h3 { font-size: 21px; }
+
+.post-body img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* An image inside a heading (`## Title ![](/logo.png)`) renders as a small round icon. */
+.post-body :is(h1, h2, h3, h4) img {
+  width: auto;
+  height: 1.4em;
+  margin-left: 10px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.post-body blockquote {
+  margin: 24px 0;
+  padding: 4px 20px;
+  border-left: 3px solid var(--link);
+  color: var(--text-subtle);
+}
+
+.post-body code {
+  font-family: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+  font-size: 0.9em;
+}
+
+.post-body :not(pre) > code {
+  padding: 2px 6px;
+  background: var(--surface-strong);
+  border-radius: 4px;
+}
+
+.post-body pre {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.post-body pre code.hljs {
+  padding: 16px 20px;
+  background: #0d1117;
+}
+
+.post-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+}
+
+.post-body th,
+.post-body td {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+.post-body hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 40px 0;
+}
+
+.post-body .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
