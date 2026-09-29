@@ -36,4 +36,5 @@ export const personalData: PersonalInfo[] = [
 export const socialLinks = [
     { name: 'GitHub', url: 'https://github.com/letv1nnn' },
     { name: 'LinkedIn', url: 'https://www.linkedin.com/in/artem-lytvyn-22694b348/' },
+    { name: 'Get in touch', url: 'mailto:artemlytvyn2007@gmail.com' },
 ];
