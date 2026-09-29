@@ -18,6 +18,14 @@ const files = import.meta.glob('../posts/*.md', {
     eager: true,
 }) as Record<string, string>;
 
+// Images live next to their post, in src/posts/<slug>/, and are linked relatively
+// from the markdown (`![](<slug>/photo.jpg)`). Vite bundles them and gives each a URL.
+const assets = import.meta.glob('../posts/*/*.{png,jpg,jpeg,gif,webp,svg}', {
+    query: '?url',
+    import: 'default',
+    eager: true,
+}) as Record<string, string>;
+
 const FRONTMATTER = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/;
 const HEADING = /^\s*# (.+)\r?\n?/;
 const BODY_DATE = /^\s*\*(\d{1,2})\/(\d{1,2})\/(\d{4})\b/;
@@ -69,6 +77,10 @@ export const getAllPosts = (): Post[] => posts;
 
 export const getPost = (slug: string): Post | undefined =>
     posts.find((post) => post.slug === slug);
+
+// Map a relative markdown link to its bundled URL; anything else passes through unchanged.
+export const resolveAsset = (url: string): string =>
+    assets[`../posts/${url.replace(/^\.\//, '')}`] ?? url;
 
 export const formatDate = (date: string): string => {
     const parsed = new Date(date);

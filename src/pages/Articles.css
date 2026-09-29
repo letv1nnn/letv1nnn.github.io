@@ -90,15 +90,36 @@
 .post-body h3 { font-size: 21px; }
 
 .post-body img {
-  max-width: 100%;
-  border-radius: 8px;
+  display: block;
+  width: 100%;
+  margin: 32px 0;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+/* Several images in one paragraph sit side by side across the column. */
+.post-body p:has(> img + img) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 32px 0;
+}
+
+.post-body p:has(> img + img) img {
+  margin: 0;
+  aspect-ratio: 4 / 5;
 }
 
 /* An image inside a heading (`## Title ![](/logo.png)`) renders as a small round icon. */
 .post-body :is(h1, h2, h3, h4) img {
+  display: inline;
   width: auto;
+  aspect-ratio: auto;
+  border: none;
   height: 1.4em;
-  margin-left: 10px;
+  margin: 0 0 0 10px;
   border-radius: 50%;
   vertical-align: middle;
 }

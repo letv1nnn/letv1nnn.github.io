@@ -1,12 +1,12 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
-import Markdown from 'react-markdown'
+import Markdown, { defaultUrlTransform } from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import rehypeHighlight from 'rehype-highlight'
 import 'katex/dist/katex.min.css'
 import 'highlight.js/styles/github-dark.css'
-import { formatDate, getPost } from '../lib/posts'
+import { formatDate, getPost, resolveAsset } from '../lib/posts'
 import './Articles.css'
 
 export const Article = () => {
@@ -27,6 +27,7 @@ export const Article = () => {
         <Markdown
           remarkPlugins={[remarkGfm, remarkMath]}
           rehypePlugins={[rehypeKatex, rehypeHighlight]}
+          urlTransform={(url) => defaultUrlTransform(resolveAsset(url))}
         >
           {post.content}
         </Markdown>

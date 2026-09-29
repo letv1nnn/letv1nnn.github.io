@@ -6,7 +6,7 @@ This is my first post. It's about my 4 months at Red Hat as an AI Engineering in
 
 ## Who I was going in
 
-Rust. C++. Tech books. Whatever corner of CS I could get my hands on. I built agents, some libs, a ray tracer, a couple of interpreters, some games and other interesting stuff.
+Rust. C++. Tech books. Whatever corner of CS I could get my hands on. I built agents, some libs, a ray tracer, a couple of interpreters, some games.
 
 There was only ever one goal: understand how the thing actually works. All the way down. If you can't build or explain it, you don't understand it.
 
@@ -16,7 +16,9 @@ On paper, I was joining a RAG team. Python, Go, embeddings, vector DBs. I did no
 
 I was wrong. Good.
 
-## Red Hat ![Red Hat logo](/rh-logo.jpeg)
+## Red Hat ![Red Hat logo](rh-internship/logo.jpeg)
+
+![Red Hat office reception](rh-internship/lobby.jpg)
 
 XYZ team. AI infrastructure. When I showed up, they were building a Kubernetes operator for agent identity, [rossoctl](https://github.com/rossoctl/operator). Go, K8s, SPIFFE/SPIRE. Two weeks of reading the arch, learning the tooling, figuring out how the team moves.
 
@@ -48,10 +50,10 @@ async fn main() {
     let help_the_team = async {
         // Most of the team hadn't written Rust before.
         // I teamed up with the one teammate who had,
-        // and we wrote an onboarding doc together. ALso,
-        // I helped one of my teamates to find relevant
-        // resources to understand language philosophy.
-        write_onboarding_doc().await
+        // and we wrote an onboarding doc together.
+        // I also pointed another teammate to resources
+        // on the language's philosophy.
+        write_onboarding_doc().await;
         pop_resources_from_head().await
     };
 
@@ -102,4 +104,14 @@ The network alone was worth it. I walked in knowing nobody. I walked out knowing
 
 I also walked out a better engineer, with a better philosophy. I used to dream about big corps. Now I think they're a bad place to start. You're one new hire in a machine of thousands, and you get the grunt work nobody else wants. Here I got a real problem, in a real open-source codebase, in my favourite language.
 
+---
+
+A few frames from the four months:
+
+![View from my desk over Dublin, with a copy of Async Rust](rh-internship/office-view.jpg)
+![Evening sky over a field](rh-internship/meadow.jpg)
+
+
 So much for "engineers don't get to work on what they're interested in."
+
+
