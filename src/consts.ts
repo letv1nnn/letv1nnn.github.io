@@ -11,7 +11,7 @@ export const personalData: PersonalInfo[] = [
         id: 1,
         title: 'Me, my self-reflection and my articles',
         body: 'My name is Artem (Artem Lytvyn). I am 19 y.o., originally ' +
-              'from Ukraine (Kiev), and now live in Ireland (Dublin). I am also a second-year ' +
+              'from Ukraine (Kiev), and now live in Ireland (Dublin). I am also a third-year ' +
               'Computer Science student at DCU (Dublin City University). My ' +
               'primary interests are programming (primarily Rust and C++), computer ' +
               'science in general, mathematics and literature (both classical and ' +

@@ -1,0 +1,13 @@
+[package]
+name = "dispatching"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "dispatching"
+path = "src/main.rs"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
