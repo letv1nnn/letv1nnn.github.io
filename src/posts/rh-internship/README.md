@@ -16,9 +16,9 @@ On paper, I was joining a RAG team. Python, Go, embeddings, vector DBs. I did no
 
 I was wrong. Good.
 
-## Red Hat ![Red Hat logo](rh-internship/logo.jpeg)
+## Red Hat ![Red Hat logo](logo.jpeg)
 
-![Red Hat office reception](rh-internship/lobby.jpg)
+![Red Hat office reception](lobby.jpg)
 
 XYZ team. AI infrastructure. When I showed up, they were building a Kubernetes operator for agent identity, [rossoctl](https://github.com/rossoctl/operator). Go, K8s, SPIFFE/SPIRE. Two weeks of reading the arch, learning the tooling, figuring out how the team moves.
 
@@ -108,8 +108,8 @@ I also walked out a better engineer, with a better philosophy. I used to dream a
 
 A few frames from the four months:
 
-![View from my desk over Dublin, with a copy of Async Rust](rh-internship/office-view.jpg)
-![Evening sky over a field](rh-internship/meadow.jpg)
+![View from my desk over Dublin, with a copy of Async Rust](office-view.jpg)
+![Evening sky over a field](meadow.jpg)
 
 
 So much for "engineers don't get to work on what they're interested in."

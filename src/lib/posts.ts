@@ -11,15 +11,16 @@ export interface Post {
     content: string,
 }
 
-// Every .md file in src/posts is bundled at build time; the filename becomes the slug.
-const files = import.meta.glob('../posts/*.md', {
+// Every post is a directory, src/posts/<slug>/, holding a README.md that is bundled
+// at build time; the directory name becomes the slug.
+const files = import.meta.glob('../posts/*/README.md', {
     query: '?raw',
     import: 'default',
     eager: true,
 }) as Record<string, string>;
 
-// Images live next to their post, in src/posts/<slug>/, and are linked relatively
-// from the markdown (`![](<slug>/photo.jpg)`). Vite bundles them and gives each a URL.
+// Images live next to their post's README.md and are linked relatively from the
+// markdown (`![](photo.jpg)`). Vite bundles them and gives each a URL.
 const assets = import.meta.glob('../posts/*/*.{png,jpg,jpeg,gif,webp,svg}', {
     query: '?url',
     import: 'default',
@@ -31,7 +32,7 @@ const HEADING = /^\s*# (.+)\r?\n?/;
 const BODY_DATE = /^\s*\*(\d{1,2})\/(\d{1,2})\/(\d{4})\b/;
 
 const parsePost = (path: string, raw: string): Post => {
-    const slug = path.split('/').pop()!.replace(/\.md$/, '');
+    const slug = path.split('/').at(-2)!;
     const match = raw.match(FRONTMATTER);
     const meta = match ? (parse(match[1]) ?? {}) : {};
     let content = match ? raw.slice(match[0].length) : raw;
@@ -79,8 +80,8 @@ export const getPost = (slug: string): Post | undefined =>
     posts.find((post) => post.slug === slug);
 
 // Map a relative markdown link to its bundled URL; anything else passes through unchanged.
-export const resolveAsset = (url: string): string =>
-    assets[`../posts/${url.replace(/^\.\//, '')}`] ?? url;
+export const resolveAsset = (slug: string, url: string): string =>
+    assets[`../posts/${slug}/${url.replace(/^\.\//, '')}`] ?? url;
 
 export const formatDate = (date: string): string => {
     const parsed = new Date(date);

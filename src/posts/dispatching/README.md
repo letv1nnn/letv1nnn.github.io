@@ -1,5 +1,7 @@
 # Dispatching in Rust vs Haskell (WIP)
 
+*02/10/2026 · WIP*
+
 Languages like Rust and C++(compiled, imperative langs) use concepts of dynamic and static dispatch. However, while I was learning Haskell, I wondered how its compiler handling generics and stuff like that.
 
 ---
@@ -166,7 +168,7 @@ Haskell's type classes play the role of Rust's traits, but the default mechanism
 
 Let's have a look at the following example:
 
-```hs
+```haskell
 class Shape a where
   area :: a -> Double
   name :: a -> String
@@ -188,7 +190,7 @@ describe x = name x ++ " with area " ++ show (area x)
 
 So the compiler roughly turns it into a record of functions, called a dictionary. Each instance becomes one value of that record. The constraint `Shape a =>` becomes an extra argument:
 
-```hs
+```haskell
 data ShapeDict a = ShapeDict
   { area :: a -> Double
   , name :: a -> String
