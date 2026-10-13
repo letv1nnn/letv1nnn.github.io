@@ -218,7 +218,7 @@ There was only ever one goal: understand how the thing actually works. All the w
 
 I also believed something depressing. Engineers don't get to work on what they care about. You sell your hours to someone else's roadmap and keep the interesting stuff for nights and weekends.
 
-On paper, I was joining a RAG team. Python, Go, embeddings, vector DBs. I did not expect AI agent infra. I did not expect Rust.
+On paper, I was joining a RAG team. Python, Go, embeddings, vector DBs, it already sounded interesting, but I did not expect anything serious for interns.
 
 I was wrong. Good.
 
