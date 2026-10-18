@@ -21,7 +21,8 @@ export const personalData: PersonalInfo[] = [
         id: 2,
         title: 'What am I currently doing?',
         body: 'I am currently working on NVIDIA Openshell, recently finished interning at Red Hat. ' +
-              'Alongside that, I continue deepening my knowledge of Rust and just dreaming.',
+              'Alongside that, I came back to machine learning and am currently reading "Hands-On Machine Learning ' +
+              'with Scikit-Learn, Keras, and TensorFlow" while watching CS229. I\'m also actively playing chess and just dreaming.',
         links: [
             { label: 'NVIDIA Openshell', url: 'https://github.com/NVIDIA/OpenShell' },
         ],
