@@ -1,7 +1,7 @@
 // main rules of object safety for trait objects
-// - methods can't have generic params, because vtable cant't store multiple monomorphized functions pointers.
+// - methods can't have generic params, because vtable can't store multiple monomorphized function pointers.
 // - methods must have a receiver (associated methods), because there is no particular trait object to dispatch on.
-// - methods do not return Self when it is not Sized, because then !Sized obj.clone() makes no sence.
+// - methods do not return Self when it is not Sized, because then !Sized obj.clone() makes no sense.
 
 // Self: Sized is often used to make a trait method
 // unavailable on trait objects, which helps keep
@@ -38,4 +38,4 @@ pub(crate) fn gar(_obj: &dyn Print) {}
 
 // #[fundamental] is applied for some types, including &, &mut and Box<T> to allow them to break the orphan rule,
 // so impl IntoIterator for &MyType is valid, with just the orphan rule, this implementation would
-// not be permitted subce it implements a foreign trait for a foreign type (IntoIterator and &).
+// not be permitted since it implements a foreign trait for a foreign type (IntoIterator and &).
