@@ -20,12 +20,14 @@ export const personalData: PersonalInfo[] = [
     {
         id: 2,
         title: 'What am I currently doing?',
-        body: 'I am currently working on NVIDIA Openshell, recently finished interning at Red Hat. ' +
+        body: 'I am currently working on NVIDIA Openshell, an open source runtime for running AI agents safely in sandboxes, where I\'m also a reviewer. ' +
               'Alongside that, I came back to machine learning and am currently reading "Hands-On Machine Learning ' +
-              'with Scikit-Learn, Keras, and TensorFlow" while watching CS229. I\'m also actively playing chess and just dreaming.',
+              'with Scikit-Learn, Keras, and TensorFlow". I\'m also actively playing chess and just dreaming.',
         links: [
             { label: 'NVIDIA Openshell', url: 'https://github.com/NVIDIA/OpenShell' },
-        ],
+        	{ label: 'reviewer', url: 'https://github.com/NVIDIA/OpenShell/blob/main/REVIEWERS.md'},
+			{ label: '"Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow"', url: 'https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/'},
+		],
     },
     {
         id: 3,
