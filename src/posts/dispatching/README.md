@@ -1,6 +1,6 @@
 # your trait object is just two pointers
 
-*02/10/2026*
+*02/10/2026* · ~15 min read
 
 You call a method on a generic. Which function actually runs? Somebody has to decide, either the compiler or the program at runtime. That's dispatch.
 
