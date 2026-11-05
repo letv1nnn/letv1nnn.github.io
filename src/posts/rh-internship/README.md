@@ -1,4 +1,4 @@
-# The lore behind the internship at Red Hat
+# red hat, not the linkedin version
 
 *28/09/2026 · ~4 min read*
 
