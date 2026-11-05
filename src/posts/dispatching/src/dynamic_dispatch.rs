@@ -1,6 +1,6 @@
 use std::os::raw::c_void;
 
-pub(crate) trait Shape {
+pub trait Shape {
     fn name<'a>(&'a self) -> &'a str;
     fn area(&'_ self) -> f64;
 }
@@ -35,6 +35,12 @@ impl Shape for Rectangle {
     }
 }
 
+// what `shape.name()` compiles to: `call qword ptr [rsi + 24]` (with --release)
+#[inline(never)]
+pub fn call_name(shape: &dyn Shape) -> usize {
+    shape.name().len()
+}
+
 // we do not know the resulting Shape, thus we need to return a pointer to it using dyn dispatch
 pub(crate) fn parse(s: &'_ str) -> Result<Box<dyn Shape>, String> {
     match s.to_ascii_lowercase().trim() {
@@ -47,7 +53,7 @@ pub(crate) fn parse(s: &'_ str) -> Result<Box<dyn Shape>, String> {
 #[repr(C)]
 #[derive(Debug, Clone, Copy)]
 pub(crate) struct ShapeVTable<'a> {
-    drop: fn(*mut c_void),
+    drop: Option<unsafe fn(*mut c_void)>, // null if there's nothing to drop
     size: usize,
     alignment: usize,
     name: fn(*const c_void) -> &'a str,
@@ -68,17 +74,21 @@ pub fn breaking_dynamic_dispatch() {
 
     let ptr_of_ptr_to_vtable = addr_of_ptr_to_vtable as *mut *const ShapeVTable<'_>;
 
-    // we have copied the underlying vtable of `circle` instance defined above.
-    let mut vtable_only_for_circle_instance = unsafe { **ptr_of_ptr_to_vtable };
-    // we changed the `name` function to rec, in the COPIED virtual table
-    vtable_only_for_circle_instance.name = rec;
+    // copy the vtable (it lives in read-only memory) and swap `name`
+    let mut fake_vtable = unsafe { **ptr_of_ptr_to_vtable };
+    fake_vtable.name = rec;
 
-    // assign copied vtable to circle instance
-    unsafe { *ptr_of_ptr_to_vtable = &vtable_only_for_circle_instance };
+    // point the box at our copy
+    let original = unsafe { *ptr_of_ptr_to_vtable };
+    unsafe { *ptr_of_ptr_to_vtable = &fake_vtable };
 
     assert_eq!(circle.name(), "rectangle");
+
+    // put the real vtable back. `fake_vtable` dies before `circle`,
+    // and dropping `circle` reads size/align from the vtable
+    unsafe { *ptr_of_ptr_to_vtable = original };
 }
 
-const fn rec(_: *const c_void) -> &'static str {
+fn rec(_: *const c_void) -> &'static str {
     "rectangle"
 }
